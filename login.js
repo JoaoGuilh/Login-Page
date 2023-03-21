@@ -76,10 +76,6 @@ let nome2 = localStorage.getItem('usuarioativo')
 
 if (nome2 != undefined) {
 
-
-    let acesso = document.querySelector('h2#acesso')
-    acesso.innerHTML += `${nome2}`
-
     // window.addEventListener('beforeunload', function () {
     //     this.localStorage.removeItem('usuarioativo')
     // })
@@ -96,7 +92,10 @@ if (nome2 != undefined) {
         localStorage.removeItem('usuarioativo')
 
     }
-
+    
+    let acesso = document.querySelector('h2#acesso')
+    acesso.innerHTML += `${nome2}`
+    
     function apagar() {
         let lista = document.querySelector('div.cadastros')
 
