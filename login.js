@@ -1,8 +1,8 @@
 let user = [
-    // {
-    //     name: "admin",
-    //     password: "admin"
-    // },
+    {
+        name: "admin",
+        password: "admin"
+    },
     {
         name: "a1@hotmail.com",
         password: "12345"
@@ -58,14 +58,6 @@ let user = [
     {
         name: "a14@hotmail.com",
         password: "12345"
-    },
-    {
-        name: "a15@hotmail.com",
-        password: "12345"
-    },//14
-    {
-        name: "admin@hotmail.com",
-        password: "admin"
     }
 
 ] // let user se chama 'a'
