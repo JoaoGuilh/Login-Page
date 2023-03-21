@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+}
+.centralizar{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.botoes{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+    
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url(hp.jpg);
+    background-size: cover;
+}
+.back{
+    text-align: left;
+    display: flex;
+    font-family: Impact;
+    font-size: 36px;
+    color: whitesmoke;
+      
+    
+}
+.clear,.voltar{
+    height: 50%;
+    margin-left: 1%;
+}
+header{
+    width: 100%;
+    height: 10%;
+    background-color: #20283d98;
+    display: flex;
+    flex-direction: row;
+    color: whitesmoke;
+}
+footer{
+    width: 100%;
+    height: 10%;
+    background-color: #20283d98;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    color: whitesmoke;
+}
+main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+.n1{
+    color: whitesmoke;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 100%;
+    margin-right: 10px;
+    text-align: right;
+}
+h1,h2{
+    text-align: center;
+
+}
+.bloco1{
+    width: 40%;
+    height: 80%;
+    background-color: #4b64a4b4;
+    flex-direction: column;
+}
+.coluna{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+
+}
+.cadastros{
+
+    height: 100%;
+    width: 100%;
+    margin-left: 2%;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    
+}
+input{
+    margin-left: 10px;
+}
+/* .voltar{
+justify-items: left;
+} */
+form{
+    font-size: 28px;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.appear{
+    background-image: linear-gradient(to bottom,rgb(78, 48, 96), rgb(38, 38, 78));
+    border-radius: 10px;
+    transition: 1s;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    
+}
+.appear:hover{
+    background-image: linear-gradient(to bottom ,rgb(197, 105, 250),rgb(86, 86, 244));
+    font-weight: bold;
+    
+}
