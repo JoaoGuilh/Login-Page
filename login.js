@@ -358,6 +358,9 @@ if (nome2 != undefined) {
             (alert("Login realizado com sucesso!"))
             testaruserpass1()
         }
+         else{
+            (alert("Usuário não encontrado, verifique as informações inseridas."))
+        }
 
     }
 
