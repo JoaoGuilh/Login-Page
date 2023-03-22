@@ -58,7 +58,7 @@ let user = [
     {
         name: "a14@hotmail.com",
         password: "12345"
-    }
+    },
 
 ] // let user se chama 'a'
 // Array 'user' definido como Global, para poder ser acessado por outras Functions
@@ -67,6 +67,9 @@ let nome2 = localStorage.getItem('usuarioativo')
 
 
 if (nome2 != undefined) {
+
+
+    
 
     // window.addEventListener('beforeunload', function () {
     //     this.localStorage.removeItem('usuarioativo')
@@ -84,10 +87,10 @@ if (nome2 != undefined) {
         localStorage.removeItem('usuarioativo')
 
     }
-    
+
     let acesso = document.querySelector('h2#acesso')
     acesso.innerHTML += `${nome2}`
-    
+
     function apagar() {
         let lista = document.querySelector('div.cadastros')
 
@@ -124,8 +127,16 @@ if (nome2 != undefined) {
 
     //Fechar a página apaga o Armazenamento Local
 
+    
 
-    function deletar() {
+
+    function deletar() 
+    {
+
+    if (localStorage.getItem("usuarioativo") !== "admin")
+        { alert("Você não possui as permissões necessárias para fazer isso!!!")}
+
+    else{
         let lista = document.querySelector('div.cadastros')
 
         apagar()
@@ -138,14 +149,19 @@ if (nome2 != undefined) {
         const inputdeletar2 = document.querySelector("#deletarusuarios2")
         inputdeletar2.addEventListener("click", deletausuario2)
     }
+    
+    }
+
+    
+    
 
     function deletausuario2() {
 
         let userdeletado = [""]
+        let adm = localStorage.getItem("usuarioativo")
 
         for (let a = 0; a < user.length; a++) {
             let checkbox = document.getElementById(`${a}`)
-
             if (checkbox.checked == true) {
                 userdeletado[a] = 1
 
@@ -153,11 +169,19 @@ if (nome2 != undefined) {
             else {
                 userdeletado[a] = 0
             }
-
+        
         }
         for (let a = userdeletado.length - 1; a >= 0; a--) {
             if (userdeletado[a] == 1) {
-                user.splice(a, 1)
+                 if ((a != 0) && (user[a].name !== "admin"))
+                {
+                    user.splice(a, 1);
+                }
+                else{
+                    alert("O Administrador não pode ser apagado")
+                    
+                }
+
             }
         }
         listar();
@@ -225,9 +249,9 @@ if (nome2 != undefined) {
         <label>New Username:</label>
         <input type="text" class="inputuser1">
         <label>New Password:</label>
-        <input type="password" class="inputpassword1" required>
+        <input type="password" class="inputpassword1">
         <label>Confirm Password:</label>
-        <input type="password" class="inputpassword2" required><br>
+        <input type="password" class="inputpassword2"><br></br>
         <input type="button" value="Save Changes" id="pass">
         </form>`
 
@@ -239,6 +263,9 @@ if (nome2 != undefined) {
 
 
     function renewuser() {
+        
+        
+        
         let name = document.querySelector('input.inputuser').value
         let name1 = document.querySelector('input.inputuser1').value
         let password = document.querySelector('input.inputpassword').value
@@ -261,7 +288,7 @@ if (nome2 != undefined) {
             for (let a = 0; a < user.length; a++) {
                 if (user[a].name == name) {
                     errouser = 0
-                    if ((user[a].password == password) && (password1 == password2) && (password1 != "") && (password2 != "")) {
+                    if ((user[a].password == password) && (password1 == password2) && ((password1 !="") && (password2!=""))) {
                         erropassword = 0
                         indice = a
                     }
@@ -291,6 +318,7 @@ if (nome2 != undefined) {
             atualizar()
         }
     }
+    
 
 
     const inputtestar = document.querySelector("#atualizar")
@@ -327,11 +355,8 @@ if (nome2 != undefined) {
             }
         }
         if (erro == 0) {
-            (alert("Usuário está cadastrado no Sistema!"))
+            (alert("Login realizado com sucesso!"))
             testaruserpass1()
-        }
-        else{
-            (alert("Usuário não encontrado, verifique as informações inseridas."))
         }
 
     }
@@ -353,7 +378,7 @@ else {
         let senha = document.querySelector('input#password').value
         let userfalso = 1
 
-        for (let a = 0; a < user.length; a++) {
+        for (let a = 0; a < user.length -1; a++) {
             if (username == user[a].name && senha == user[a].password) {
 
                 window.location.href = "./homepage.html"
