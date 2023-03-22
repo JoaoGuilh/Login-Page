@@ -355,7 +355,7 @@ if (nome2 != undefined) {
             }
         }
         if (erro == 0) {
-            (alert("Usuário registrado no Sistema")
+            (alert("Login realizado com sucesso!")
             testaruserpass1()
         }
 
